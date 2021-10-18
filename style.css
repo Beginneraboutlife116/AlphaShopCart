@@ -291,31 +291,28 @@ body {
   height: 0.1rem;
   background-color: var(--step-inactive-color);
 }
-
-.finish + .stepper__connect-line,
-.active + .stepper__connect-line {
+.stepper .finish + .stepper__connect-line,
+.stepper .active + .stepper__connect-line {
   background-color: var(--step-activeAndFinished-circleBorderColor);
 }
-
-.finish .stepper__info-circle {
+.stepper .finish .stepper__info-circle {
   border-color: var(--step-activeAndFinished-circleBorderColor);
   background-color: #333;
 }
-.finish .stepper__info-circle::after {
+.stepper .finish .stepper__info-circle::after {
   content: "";
   display: block;
   width: 80%;
   height: 80%;
   background: url(/src/images/icon-check.png) center/contain no-repeat;
 }
-.finish .stepper__info-circle--number {
+.stepper .finish .stepper__info-circle--number {
   display: none;
 }
-
-.active .stepper__info-circle {
+.stepper .active .stepper__info-circle {
   border-color: var(--basic-color);
 }
-.active .stepper__info-circle--number {
+.stepper .active .stepper__info-circle--number {
   color: var(--basic-color);
 }
 

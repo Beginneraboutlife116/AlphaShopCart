@@ -160,42 +160,39 @@ body {
     height: 0.1rem;
     background-color: var(--step-inactive-color);
   }
-}
-
-.finish,
-.active {
-  + .stepper__connect-line {
-    background-color: var(--step-activeAndFinished-circleBorderColor);
-  }
-}
-
-.finish {
-  .stepper__info-circle {
-    border-color: var(--step-activeAndFinished-circleBorderColor);
-    background-color: $gray-7;
-    &::after {
-      content: '';
-      display: block;
-      width: 80%;
-      height: 80%;
-      background: url(/src/images/icon-check.png) center/contain no-repeat;
-    }
-    &--number {
-      display: none;
+  .finish,
+  .active {
+    + .stepper__connect-line {
+      background-color: var(--step-activeAndFinished-circleBorderColor);
     }
   }
-}
 
-.active {
-  .stepper__info-circle {
-    border-color: var(--basic-color);
-    &--number {
-      color: var(--basic-color);  
+  .finish {
+    .stepper__info-circle {
+      border-color: var(--step-activeAndFinished-circleBorderColor);
+      background-color: $gray-7;
+      &::after {
+        content: "";
+        display: block;
+        width: 80%;
+        height: 80%;
+        background: url(/src/images/icon-check.png) center/contain no-repeat;
+      }
+      &--number {
+        display: none;
+      }
+    }
+  }
+
+  .active {
+    .stepper__info-circle {
+      border-color: var(--basic-color);
+      &--number {
+        color: var(--basic-color);
+      }
     }
   }
 }
-
-
 
 .footer {
   display: none;
