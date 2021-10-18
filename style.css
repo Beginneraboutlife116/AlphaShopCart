@@ -403,6 +403,9 @@ body {
 }
 .form__part-content--row--text:valid, .form__part-content--row--email:valid, .form__part-content--row--number:valid, .form__part-content--row--select:valid, .form__part-content--row--date:valid {
   font-size: 1.2rem;
+}
+.form__part-content--row--text:invalid, .form__part-content--row--email:invalid, .form__part-content--row--number:invalid, .form__part-content--row--select:invalid, .form__part-content--row--date:invalid {
+  font-size: 1.2rem;
   color: var(--input-placeholder);
 }
 .form__part-content--row--selectWrapper {

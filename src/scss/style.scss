@@ -261,6 +261,9 @@ body {
       }
       &:valid {
         font-size: 1.2rem;
+      }
+      &:invalid {
+        font-size: 1.2rem;
         color: var(--input-placeholder);
       }
     }
