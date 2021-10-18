@@ -1,0 +1,89 @@
+// colors
+$main-button-color: #f67599;
+$basic-dark: #2a2a2a;
+$white: white;
+$gray-1: #f0f0f5;
+$gray-2: #afb1bd;
+$gray-3: #4a4a4a;
+$gray-4: #808080;
+$gray-5: #999;
+$gray-6: #5e5e5e;
+$gray-7: #333;
+$gray-8: #e6e6eb;
+$gray-9: #F6F7F8;
+
+// setting
+:root {
+  --body-bg: white;
+  --basic-color: #{$basic-dark};
+
+  --step-activeAndFinished-circleBorderColor: #{$basic-dark};
+  --step-circle-bgc: transparent;
+  --step-circle-unfinished-color: #{$gray-2};
+
+  --input-border: #{$gray-3};
+  --input-description: #{$gray-4};
+  --input-select: #{$basic-dark};
+
+  --box-unchecked-bg: #{$white};
+  --box-unchecked-border: #{$gray-1};
+  --box-checked-bg: #{$basic-dark};
+  --box-checked-border: #{$basic-dark};
+
+  --cart-border: #{$gray-1};
+  --cart-bg: white;
+  --cart-info-divider: #{$gray-1};
+  --cart-button-divider: #{$gray-8};
+
+  --footer-bg: #{$gray-9};
+
+  --search-icon: url(../images/lightmode-icon/icon-search.png);
+  --cart-icon: url(../images/lightmode-icon/icon-cart.png);
+  --darkmode-icon: url(../images/lightmode-icon/icon-moon.png);
+  --plus-icon: url(../images/lightmode-icon/icon-plus.png);
+  --minus-icon: url(../images/lightmode-icon/icon-minus.png);
+  --arrow-white: url(../images/darkmode-icon/arrow-dark.png);
+  --arrow-black: url(../images/lightmode-icon/arrow.png);
+  --logo: url(../images/lightmode-icon/logo.png);
+  --facebook: url(../images/lightmode-icon/icon-fb.png);
+  --instagram: url(../images/lightmode-icon/icon-ig.png);
+  --whatsapp: url(../images/lightmode-icon/icon-whatsapp.png);
+}
+
+.darkMode {
+  --body-bg: #121212;
+  --basic-color: #{$white};
+  --intensive-color: #{$white};
+
+  --step-activeAndFinished-circleBorderColor: transparent;
+  --step-circle-bgc: #{$gray-7};
+  --step-circle-unfinished-color: rgba(240, 240, 245, 0.4);
+
+  --input-border: #{$gray-6};
+  --input-description: #{$white};
+  --input-select: #{$gray-6};
+
+  --box-unchecked-bg: #{$gray-7};
+  --box-unchecked-border: #{$gray-6};
+  --box-checked-bg: #{$gray-7};
+  --box-checked-border: #{$white};
+
+  --cart-border: rgba(255, 255, 255, 0.2);
+  --cart-bg: #383838;
+  --cart-button-content: #{$gray-7};
+  --cart-info-divider: rgba(255, 255, 255, 0.2);
+  --cart-button-divider: rgba(255, 255, 255, 0.2);
+
+  --footer-bg: #{$gray-7};
+
+  --search-icon: url(../images/darkmode-icon/icon-search-dark.png);
+  --cart-icon: url(../images/darkmode-icon/icon-cart-dark.png);
+  --darkmode-icon: url(../images/darkmode-icon/icon-sun.png);
+  --plus-icon: url(../images/darkmode-icon/icon-plus-dark.png);
+  --minus-icon: url(../images/darkmode-icon/icon-minus-dark.png);
+  --arrow-black: url(../images/darkmode-icon/arrow-dark.png);
+  --logo: url(../images/darkmode-icon/logo-dark.png);
+  --facebook: url(../images/darkmode-icon/icon-fb-dark.png);
+  --instagram: url(../images/darkmode-icon/icon-ig-dark.png);
+  --whatsapp: url(../images/darkmode-icon/icon-whatsapp-dark.png);
+}
