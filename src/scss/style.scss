@@ -342,6 +342,51 @@ body {
 
 .cart {
   grid-area: cart;
+  min-height: 35.8rem;
+  max-height: 49.2rem;
+  padding: 1.6rem;
+  border: 1px solid var(--cart-border);
+  border-radius: 0.8rem;
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+    &-picture {
+      width: 10rem;
+      height: 10rem;
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      &-amout {
+        width: 11.6rem;
+        height: 2.7rem;
+        display: flex;
+        justify-content: space-between;
+        &--minus,
+        &--plus {
+          height: 100%;
+          aspect-ratio: 1;
+        }
+        &--minus {
+          background: var(--minus-icon) center/contain no-repeat;
+        }
+        &--plus {
+          background: var(--plus-icon) center/contain no-repeat;
+        }
+      }
+    }
+  }
+  &__deliveryFee,
+  &__price {
+    padding: 1.6rem;
+    border-top: 1px solid var(--cart-info-divider);
+  }
+  &__price {
+    padding-bottom: 0;
+  }
 }
 
 .btn {

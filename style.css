@@ -473,6 +473,49 @@ body {
 
 .cart {
   grid-area: cart;
+  min-height: 35.8rem;
+  max-height: 49.2rem;
+  padding: 1.6rem;
+  border: 1px solid var(--cart-border);
+  border-radius: 0.8rem;
+}
+.cart__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+}
+.cart__item-picture {
+  width: 10rem;
+  height: 10rem;
+}
+.cart__item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.cart__item-content-amout {
+  width: 11.6rem;
+  height: 2.7rem;
+  display: flex;
+  justify-content: space-between;
+}
+.cart__item-content-amout--minus, .cart__item-content-amout--plus {
+  height: 100%;
+  aspect-ratio: 1;
+}
+.cart__item-content-amout--minus {
+  background: var(--minus-icon) center/contain no-repeat;
+}
+.cart__item-content-amout--plus {
+  background: var(--plus-icon) center/contain no-repeat;
+}
+.cart__deliveryFee, .cart__price {
+  padding: 1.6rem;
+  border-top: 1px solid var(--cart-info-divider);
+}
+.cart__price {
+  padding-bottom: 0;
 }
 
 .btn {
