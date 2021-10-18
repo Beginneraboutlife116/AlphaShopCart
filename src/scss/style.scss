@@ -1,3 +1,114 @@
 @import "./reset";
 @import "./breakpoints";
 @import "./variables";
+
+// 
+%positionCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  background-color: var(--body-bg);
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 4em;
+  margin-inline: 1.5rem;
+  font-size: 1.4rem;
+  &__toggleBox {
+    width: 2rem;
+    height: 1.5rem;
+    cursor: pointer;
+    &--style {
+      display: block;
+      position: relative;
+      height: 0.2rem;
+      background-color: var(--basic-color);
+      &::after,
+      &::before {
+        position: absolute;
+        display: block;
+        content: "";
+        height: 0.2rem;
+        background-color: var(--basic-color);
+        transform: translateY(-50%);
+      }
+      &::before {
+        top: 0.95rem;
+        width: 75%;
+      }
+      &::after {
+        top: 1.7rem;
+        width: 50%;
+      }
+    }
+  }
+  &__logo {
+    width: 10em;
+    height: 1.8em;
+    background: var(--logo) center/contain no-repeat;
+    @extend %positionCenter;
+  }
+  #nav-toggleBox {
+    display: none;
+    &:checked + .nav {
+      transform: scaleY(1);
+    }
+  }
+}
+
+.nav {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100vh;
+  transform: scaleY(0);
+  transition: transform 0.2s;
+  transform-origin: top;
+  background-color: var(--body-bg);
+  &__menu {
+    padding: 0;
+    &-list {
+      padding-block: 2.4rem;
+      border-bottom: 2px solid hsla(0, 0%, 16%, 0.1);
+      text-align: center;
+      &-info {
+        text-decoration: none;
+        color: var(--basic-color);
+        &:hover {
+          color: $main-button-color;
+        }
+      }
+    }
+  }
+  &__icons {
+    max-width: 15rem;
+    min-width: 13rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 2.4rem auto;
+    height: 2.4rem;
+    &-search,
+    &-cart,
+    &-darkMode {
+      width: 2.4rem;
+      height: 2.4rem;
+      cursor: pointer;
+    }
+    &-search {
+      background: var(--search-icon) center/contain no-repeat;
+    }
+    &-cart {
+      background: var(--cart-icon) center/contain no-repeat;
+    }
+    &-darkMode {
+      background: var(--dark-mode-icon) center/contain no-repeat;
+    }
+  }
+}
