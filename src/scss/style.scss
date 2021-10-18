@@ -2,12 +2,18 @@
 @import "./breakpoints";
 @import "./variables";
 
-// 
+// placeholder
 %positionCenter {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+%flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -72,6 +78,7 @@ body {
   transition: transform 0.2s;
   transform-origin: top;
   background-color: var(--body-bg);
+  z-index: 1;
   &__menu {
     padding: 0;
     &-list {
@@ -111,4 +118,85 @@ body {
       background: var(--dark-mode-icon) center/contain no-repeat;
     }
   }
+}
+
+.information {
+  margin: 1.6rem 0 2.4rem 1.5rem;
+  font-size: 2.4rem;
+  @include md {
+    font-size: 3.2rem;
+    margin: 8rem 0 4.8rem 1.5rem;
+  }
+}
+
+.main-content {
+  padding-inline: 1.5rem;
+}
+
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  &__info {
+    position: relative;
+    &-circle {
+      @extend %flexCenter;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      background-color: var(--step-circle-bgc);
+      border: 0.1rem solid var(--step-inactive-color);
+      color: var(--step-inactive-color);
+    }
+    &-title {
+      display: none;
+    }
+  }
+  &__connect-line {
+    display: block;
+    display: flex;
+    width: 15%;
+    height: 0.1rem;
+    background-color: var(--step-inactive-color);
+  }
+}
+
+.finish,
+.active {
+  + .stepper__connect-line {
+    background-color: var(--step-activeAndFinished-circleBorderColor);
+  }
+}
+
+.finish {
+  .stepper__info-circle {
+    border-color: var(--step-activeAndFinished-circleBorderColor);
+    background-color: $gray-7;
+    &::after {
+      content: '';
+      display: block;
+      width: 80%;
+      height: 80%;
+      background: url(/src/images/icon-check.png) center/contain no-repeat;
+    }
+    &--number {
+      display: none;
+    }
+  }
+}
+
+.active {
+  .stepper__info-circle {
+    border-color: var(--basic-color);
+    &--number {
+      color: var(--basic-color);  
+    }
+  }
+}
+
+
+
+.footer {
+  display: none;
 }
