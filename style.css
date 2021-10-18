@@ -1,0 +1,134 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: 1.6rem;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --body-bg: white;
+  --basic-color: #2a2a2a;
+  --step-activeAndFinished-circleBorderColor: #2a2a2a;
+  --step-circle-bgc: transparent;
+  --step-circle-unfinished-color: #afb1bd;
+  --input-border: #4a4a4a;
+  --input-description: #808080;
+  --input-select: #2a2a2a;
+  --box-unchecked-bg: white;
+  --box-unchecked-border: #f0f0f5;
+  --box-checked-bg: #2a2a2a;
+  --box-checked-border: #2a2a2a;
+  --cart-border: #f0f0f5;
+  --cart-bg: white;
+  --cart-info-divider: #f0f0f5;
+  --cart-button-divider: #e6e6eb;
+  --footer-bg: #F6F7F8;
+  --search-icon: url(../images/lightmode-icon/icon-search.png);
+  --cart-icon: url(../images/lightmode-icon/icon-cart.png);
+  --dark-mode-icon: url(../images/lightmode-icon/icon-moon.png);
+  --plus-icon: url(../images/lightmode-icon/icon-plus.png);
+  --minus-icon: url(../images/lightmode-icon/icon-minus.png);
+  --arrow-white: url(../images/darkmode-icon/arrow-dark.png);
+  --arrow-black: url(../images/lightmode-icon/arrow.png);
+  --logo: url(../images/lightmode-icon/logo.png);
+  --facebook: url(../images/lightmode-icon/icon-fb.png);
+  --instagram: url(../images/lightmode-icon/icon-ig.png);
+  --whatsApp: url(../images/lightmode-icon/icon-whatsapp.png);
+}
+
+.darkMode {
+  --body-bg: #121212;
+  --basic-color: white;
+  --intensive-color: white;
+  --step-activeAndFinished-circleBorderColor: transparent;
+  --step-circle-bgc: #333;
+  --step-circle-unfinished-color: rgba(240, 240, 245, 0.4);
+  --input-border: #5e5e5e;
+  --input-description: white;
+  --input-select: #5e5e5e;
+  --box-unchecked-bg: #333;
+  --box-unchecked-border: #5e5e5e;
+  --box-checked-bg: #333;
+  --box-checked-border: white;
+  --cart-border: rgba(255, 255, 255, 0.2);
+  --cart-bg: #383838;
+  --cart-button-content: #333;
+  --cart-info-divider: rgba(255, 255, 255, 0.2);
+  --cart-button-divider: rgba(255, 255, 255, 0.2);
+  --footer-bg: #333;
+  --search-icon: url(../images/darkmode-icon/icon-search-dark.png);
+  --cart-icon: url(../images/darkmode-icon/icon-cart-dark.png);
+  --dark-mode-icon: url(../images/darkmode-icon/icon-sun.png);
+  --plus-icon: url(../images/darkmode-icon/icon-plus-dark.png);
+  --minus-icon: url(../images/darkmode-icon/icon-minus-dark.png);
+  --arrow-black: url(../images/darkmode-icon/arrow-dark.png);
+  --logo: url(../images/darkmode-icon/logo-dark.png);
+  --facebook: url(../images/darkmode-icon/icon-fb-dark.png);
+  --instagram: url(../images/darkmode-icon/icon-ig-dark.png);
+  --whatsApp: url(../images/darkmode-icon/icon-whatsapp-dark.png);
+}
+
+/*# sourceMappingURL=style.css.map */
