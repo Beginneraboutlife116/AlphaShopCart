@@ -45,7 +45,7 @@
       <h1 class="information">結帳</h1>
       <div class="main-content">
         <div class="stepper">
-          <div class="stepper__info">
+          <div class="stepper__info active">
             <div class="stepper__info-circle">
               <span class="stepper__info-circle--number">1</span>
             </div>
@@ -69,7 +69,7 @@
         <form class="form">
           <div class="form__part">
             <p class="form__part-title">寄送地址</p>
-            <div class="form__part-content form-first">
+            <div class="form__part-content form__first">
               <div class="form__part-content--row mrms">
                 <label for="mrms" class="form__part-content--row--title"
                   >稱謂</label
@@ -101,8 +101,8 @@
                   >電話</label
                 >
                 <input
-                  type="number"
-                  class="form__part-content--row--number"
+                  type="text"
+                  class="form__part-content--row--text"
                   id="phone"
                   placeholder="請輸入行動電話"
                 />
@@ -165,48 +165,48 @@
           </div>
           <div class="form__part">
             <p class="form__part-title">運送方式</p>
-            <div class="form__part-content form-second">
-              <label for="std" class="form__part-content-delivery std">
+            <div class="form__part-content form__second">
+              <label for="std" class="form__second-delivery std">
                 <input
                   type="radio"
                   id="std"
                   name="delivery"
-                  class="form__part-content-delivery--radio"
+                  class="form__second-delivery--radio"
                 />
-                <div class="form__part-content-delivery-info">
-                  <p class="form__part-content-delivery-info-detail">
-                    <span class="form__part-content-delivery-info-detail--way"
+                <div class="form__second-delivery-info">
+                  <p class="form__second-delivery-info-detail">
+                    <span class="form__second-delivery-info-detail--way"
                       >標準運送</span
                     >
-                    <span class="form__part-content-delivery-info-detail--fee"
+                    <span class="form__second-delivery-info-detail--fee"
                       >免費</span
                     >
                   </p>
-                  <p class="form__part-content-delivery-info-detail">
-                    <span class="form__part-content-delivery-info-detail--time"
+                  <p class="form__second-delivery-info-detail">
+                    <span class="form__second-delivery-info-detail--time"
                       >約 3~7 個工作天</span
                     >
                   </p>
                 </div>
               </label>
-              <label for="dhl" class="form__part-content-delivery dhl">
+              <label for="dhl" class="form__second-delivery dhl">
                 <input
                   type="radio"
                   id="dhl"
                   name="delivery"
-                  class="form__part-content-delivery--radio"
+                  class="form__second-delivery--radio"
                 />
-                <div class="form__part-content-delivery-info">
-                  <p class="form__part-content-delivery-info-detail">
-                    <span class="form__part-content-delivery-info-detail--way"
+                <div class="form__second-delivery-info">
+                  <p class="form__second-delivery-info-detail">
+                    <span class="form__second-delivery-info-detail--way"
                       >DHL貨運</span
                     >
-                    <span class="form__part-content-delivery-info-detail--fee"
+                    <span class="form__second-delivery-info-detail--fee"
                       >$500</span
                     >
                   </p>
-                  <p class="form__part-content-delivery-info-detail">
-                    <span class="form__part-content-delivery-info-detail--time"
+                  <p class="form__second-delivery-info-detail">
+                    <span class="form__second-delivery-info-detail--time"
                       >48小時內送達</span
                     >
                   </p>
@@ -216,7 +216,7 @@
           </div>
           <div class="form__part">
             <p class="form__part-title">付款資訊</p>
-            <div class="form__part-content form-third">
+            <div class="form__part-content form__third">
               <div class="form__part-content--row cardOwner">
                 <label for="cardOwner" class="form__part-content--row--title"
                   >持卡人姓名</label

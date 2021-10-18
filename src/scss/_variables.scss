@@ -24,12 +24,13 @@ $gray-9: #F6F7F8;
 
   --input-border: #{$gray-3};
   --input-description: #{$gray-4};
+  --input-placeholder: #999999;
   --input-select: #{$basic-dark};
 
-  --box-unchecked-bg: #{$white};
-  --box-unchecked-border: #{$gray-1};
-  --box-checked-bg: #{$basic-dark};
-  --box-checked-border: #{$basic-dark};
+  --box-unchecked-bg-color: #{$white};
+  --box-unchecked-border-color: #{$gray-1};
+  // --box-checked-bg-color: #{$basic-dark};
+  --box-checked-border-color: #{$basic-dark};
 
   --cart-border: #{$gray-1};
   --cart-bg: white;
@@ -61,13 +62,14 @@ $gray-9: #F6F7F8;
   --step-connect-line-color: hsla(240, 20%, 95%, 0.4);
 
   --input-border: #{$gray-6};
-  --input-description: #{$white};
+  --input-description: hsla(0, 0%, 100%, 0.4);
+  --input-placeholder: rgba(255, 255, 255, 0.3);
   --input-select: #{$gray-6};
 
-  --box-unchecked-bg: #{$gray-7};
-  --box-unchecked-border: #{$gray-6};
-  --box-checked-bg: #{$gray-7};
-  --box-checked-border: #{$white};
+  --box-unchecked-bg-color: #{$gray-7};
+  --box-unchecked-border-color: #{$gray-6};
+  // --box-checked-bg-color: #{$gray-7};
+  --box-checked-border-color: #{$white};
 
   --cart-border: hsla(0, 0%, 100%, 0.2);
   --cart-bg: hsl(0, 0%, 22%);

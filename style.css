@@ -81,11 +81,11 @@ select {
   --step-connect-line-color: #f0f0f5;
   --input-border: #4a4a4a;
   --input-description: #808080;
+  --input-placeholder: #999999;
   --input-select: #292929;
-  --box-unchecked-bg: white;
-  --box-unchecked-border: #f0f0f5;
-  --box-checked-bg: #292929;
-  --box-checked-border: #292929;
+  --box-unchecked-bg-color: white;
+  --box-unchecked-border-color: #f0f0f5;
+  --box-checked-border-color: #292929;
   --cart-border: #f0f0f5;
   --cart-bg: white;
   --cart-info-divider: #f0f0f5;
@@ -112,12 +112,12 @@ select {
   --step-inactive-color: hsla(240, 20%, 95%, 0.4);
   --step-connect-line-color: hsla(240, 20%, 95%, 0.4);
   --input-border: #5e5e5e;
-  --input-description: white;
+  --input-description: hsla(0, 0%, 100%, 0.4);
+  --input-placeholder: rgba(255, 255, 255, 0.3);
   --input-select: #5e5e5e;
-  --box-unchecked-bg: #333;
-  --box-unchecked-border: #5e5e5e;
-  --box-checked-bg: #333;
-  --box-checked-border: white;
+  --box-unchecked-bg-color: #333;
+  --box-unchecked-border-color: #5e5e5e;
+  --box-checked-border-color: white;
   --cart-border: hsla(0, 0%, 100%, 0.2);
   --cart-bg: hsl(0, 0%, 22%);
   --cart-button-content: #333;
@@ -136,10 +136,8 @@ select {
   --whatsApp: url(/src/images/darkMode-icon/icon-whatsapp-dark.png);
 }
 
-.header__logo {
+.form__part-content--row--selectWrapper::after, .header__logo {
   position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -147,6 +145,50 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mrms {
+  grid-area: mrms;
+}
+
+.name {
+  grid-area: name;
+}
+
+.phone {
+  grid-area: phone;
+}
+
+.email {
+  grid-area: email;
+}
+
+.liveCity {
+  grid-area: liveCity;
+}
+
+.address {
+  grid-area: address;
+}
+
+.cardOwner {
+  grid-area: cardOwner;
+}
+
+.cardNum {
+  grid-area: cardNum;
+}
+
+.cardDate {
+  grid-area: cardDate;
+}
+
+.cardCVC-CCV {
+  grid-area: cardCVC-CCV;
+}
+
+.d-none {
+  display: none;
 }
 
 body {
@@ -192,6 +234,8 @@ body {
   width: 10em;
   height: 1.8em;
   background: var(--logo) center/contain no-repeat;
+  top: 50%;
+  left: 50%;
 }
 .header #nav-toggleBox {
   display: none;
@@ -262,9 +306,13 @@ body {
 
 .main-content {
   padding-inline: 1.5rem;
+  display: grid;
+  grid-template-rows: auto 2.4rem auto 3.2rem auto 3.2rem auto;
+  grid-template-areas: "stepper" "." "form" "." "cart" "." "btn";
 }
 
 .stepper {
+  grid-area: stepper;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -286,34 +334,149 @@ body {
 }
 .stepper__connect-line {
   display: block;
-  display: flex;
   width: 15%;
   height: 0.1rem;
   background-color: var(--step-inactive-color);
 }
-.stepper .finish + .stepper__connect-line,
-.stepper .active + .stepper__connect-line {
+
+.finish + .stepper__connect-line,
+.active + .stepper__connect-line {
   background-color: var(--step-activeAndFinished-circleBorderColor);
 }
-.stepper .finish .stepper__info-circle {
+
+.finish .stepper__info-circle {
   border-color: var(--step-activeAndFinished-circleBorderColor);
   background-color: #333;
 }
-.stepper .finish .stepper__info-circle::after {
+.finish .stepper__info-circle::after {
   content: "";
   display: block;
   width: 80%;
   height: 80%;
   background: url(/src/images/icon-check.png) center/contain no-repeat;
 }
-.stepper .finish .stepper__info-circle--number {
+.finish .stepper__info-circle--number {
   display: none;
 }
-.stepper .active .stepper__info-circle {
+
+.active .stepper__info-circle {
   border-color: var(--basic-color);
 }
-.stepper .active .stepper__info-circle--number {
+.active .stepper__info-circle--number {
   color: var(--basic-color);
+}
+
+.form {
+  grid-area: form;
+}
+.form__part-title {
+  margin-bottom: 2.4rem;
+  font-size: 2.4rem;
+}
+.form__first, .form__third {
+  display: grid;
+}
+.form__first {
+  grid-template-columns: 4fr 3rem 5fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: "mrms . name" "phone phone phone" "email email email" "liveCity liveCity liveCity" "address address address";
+  row-gap: 1.6rem;
+}
+.form__part-content--row--title {
+  font-size: 1.2rem;
+  color: var(--input-description);
+}
+.form__part-content--row--text, .form__part-content--row--email, .form__part-content--row--number, .form__part-content--row--select, .form__part-content--row--date {
+  display: block;
+  width: 100%;
+  height: 4rem;
+  padding-left: 1.6rem;
+  border-radius: 0.4rem;
+  border-width: 1px;
+  border-color: var(--input-border);
+  appearance: none;
+}
+.form__part-content--row--text::placeholder, .form__part-content--row--email::placeholder, .form__part-content--row--number::placeholder, .form__part-content--row--select::placeholder, .form__part-content--row--date::placeholder {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: var(--input-placeholder);
+}
+.form__part-content--row--text:valid, .form__part-content--row--email:valid, .form__part-content--row--number:valid, .form__part-content--row--select:valid, .form__part-content--row--date:valid {
+  font-size: 1.2rem;
+  color: var(--input-placeholder);
+}
+.form__part-content--row--selectWrapper {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+.form__part-content--row--selectWrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  width: 0;
+  border-style: solid;
+  border-width: 0.5rem 0.45rem 0;
+  border-color: var(--input-select) transparent transparent;
+  z-index: -1;
+}
+.form__part-content--row--select:valid {
+  background-color: transparent;
+}
+.form__second-delivery {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem 2rem;
+  border: 1px solid var(--box-unchecked-border-color);
+  border-radius: 0.4rem;
+}
+.form__second-delivery:first-child {
+  margin-bottom: 2.4rem;
+}
+.form__second-delivery--radio {
+  appearance: none;
+  flex-basis: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+  border: 1px solid #333;
+  border-radius: 50%;
+  background-color: var(--box-unchecked-bg-color);
+}
+.form__second-delivery--radio:checked {
+  background-color: white;
+  border-width: 0.6rem;
+}
+.form__second-delivery-info {
+  flex: 1;
+}
+.form__second-delivery-info-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+.form__second-delivery-info-detail--time {
+  font-size: 1.2rem;
+}
+.form .checked {
+  border-color: var(--box-checked-border-color);
+}
+.form__third {
+  grid-template-columns: 1fr 3rem 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "cardOwner cardOwner cardOwner" "cardNum cardNum cardNum" "cardDate . cardCVC-CCV";
+  row-gap: 1.6rem;
+}
+
+.cart {
+  grid-area: cart;
+}
+
+.btn {
+  grid-area: btn;
 }
 
 .footer {
