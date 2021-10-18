@@ -425,6 +425,14 @@ body {
       transform: rotate(180deg);
     }
   }
+  .disabled {
+    display: none;
+    + .btn__next {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
 
 .footer {
