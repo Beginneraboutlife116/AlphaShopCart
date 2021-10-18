@@ -141,12 +141,6 @@ select {
   transform: translate(-50%, -50%);
 }
 
-.stepper__info-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .mrms {
   grid-area: mrms;
 }
@@ -198,7 +192,8 @@ body {
 .header {
   position: relative;
   display: flex;
-  align-items: center;
+  justify-content: 0;
+  align-items: 0;
   height: 4em;
   margin-inline: 1.5rem;
   font-size: 1.4rem;
@@ -275,6 +270,7 @@ body {
   min-width: 13rem;
   display: flex;
   justify-content: space-between;
+  align-items: 0;
   margin: 2.4rem auto;
   height: 2.4rem;
 }
@@ -322,6 +318,9 @@ body {
   position: relative;
 }
 .stepper__info-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 2em;
   height: 2em;
   border-radius: 50%;
@@ -431,8 +430,8 @@ body {
 .form__second-delivery {
   height: 6rem;
   display: flex;
-  align-items: center;
   justify-content: start;
+  align-items: 0;
   padding: 1rem 2rem;
   border: 1px solid var(--box-unchecked-border-color);
   border-radius: 0.4rem;
@@ -459,6 +458,7 @@ body {
 .form__second-delivery-info-detail {
   display: flex;
   justify-content: space-between;
+  align-items: 0;
   font-size: 1.4rem;
 }
 .form__second-delivery-info-detail--time {
@@ -485,6 +485,7 @@ body {
 .cart__item {
   display: flex;
   justify-content: space-between;
+  align-items: 0;
   margin-bottom: 1.6rem;
 }
 .cart__item-picture {
@@ -493,15 +494,16 @@ body {
 }
 .cart__item-content {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  flex-direction: column;
 }
 .cart__item-content-amout {
   width: 11.6rem;
   height: 2.7rem;
   display: flex;
   justify-content: space-between;
+  align-items: 0;
 }
 .cart__item-content-amout--minus, .cart__item-content-amout--plus {
   height: 100%;
@@ -514,6 +516,9 @@ body {
   background: var(--plus-icon) center/contain no-repeat;
 }
 .cart__deliveryFee, .cart__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: 0;
   padding: 1.6rem;
   border-top: 1px solid var(--cart-info-divider);
 }
@@ -564,6 +569,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: 0;
 }
 
 .footer {

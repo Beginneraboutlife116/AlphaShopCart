@@ -8,10 +8,15 @@
   transform: translate(-50%, -50%);
 }
 
-%flexCenter {
+// mixins
+@mixin flexArrange($jc-val: 0, $ai-val: 0) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  @if ($jc-val) {
+    justify-content: $jc-val;
+  }
+  @if ($ai-val) {
+    align-items: $ai-val;
+  }
 }
 
 // plus gird-area
@@ -33,8 +38,7 @@ body {
 
 .header {
   position: relative;
-  display: flex;
-  align-items: center;
+  @include flexArrange;
   height: 4em;
   margin-inline: 1.5rem;
   font-size: 1.4rem;
@@ -110,8 +114,7 @@ body {
   &__icons {
     max-width: 15rem;
     min-width: 13rem;
-    display: flex;
-    justify-content: space-between;
+    @include flexArrange(space-between);
     margin: 2.4rem auto;
     height: 2.4rem;
     &-search,
@@ -158,14 +161,12 @@ body {
 
 .stepper {
   grid-area: stepper;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexArrange(space-between, center);
   font-size: 1.6rem;
   &__info {
     position: relative;
     &-circle {
-      @extend %flexCenter;
+      @include flexArrange(center, center);
       width: 2em;
       height: 2em;
       border-radius: 50%;
@@ -294,9 +295,7 @@ body {
   &__second {
     &-delivery {
       height: 6rem;
-      display: flex;
-      align-items: center;
-      justify-content: start;
+      @include flexArrange(start);
       padding: 1rem 2rem;
       border: 1px solid var(--box-unchecked-border-color);
       border-radius: 0.4rem;
@@ -319,8 +318,7 @@ body {
       &-info {
         flex: 1;
         &-detail {
-          display: flex;
-          justify-content: space-between;
+          @include flexArrange(space-between);
           font-size: 1.4rem;
           &--time {
             font-size: 1.2rem;
@@ -351,23 +349,19 @@ body {
   border: 1px solid var(--cart-border);
   border-radius: 0.8rem;
   &__item {
-    display: flex;
-    justify-content: space-between;
+    @include flexArrange(space-between);
     margin-bottom: 1.6rem;
     &-picture {
       width: 10rem;
       height: 10rem;
     }
     &-content {
-      display: flex;
+      @include flexArrange(space-between, flex-end);
       flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-end;
       &-amout {
         width: 11.6rem;
         height: 2.7rem;
-        display: flex;
-        justify-content: space-between;
+        @include flexArrange(space-between);
         &--minus,
         &--plus {
           height: 100%;
@@ -384,6 +378,7 @@ body {
   }
   &__deliveryFee,
   &__price {
+    @include flexArrange(space-between);
     padding: 1.6rem;
     border-top: 1px solid var(--cart-info-divider);
   }
@@ -397,9 +392,7 @@ body {
   padding-top: 2.4rem;
   margin-bottom: 4rem;
   border-top: 2px solid var(--cart-button-divider);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexArrange(space-between, center);
   &__prev,
   &__next {
     width: 15rem;
@@ -432,8 +425,7 @@ body {
     display: none;
     + .btn__next {
       width: 100%;
-      display: flex;
-      justify-content: center;
+      @include flexArrange(center);
     }
   }
 }
