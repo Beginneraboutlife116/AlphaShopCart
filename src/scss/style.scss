@@ -332,10 +332,10 @@ body {
   &__third {
     grid-template-columns: 1fr 3rem 1fr;
     grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 
-      'cardOwner cardOwner cardOwner'
-      'cardNum cardNum cardNum'
-      'cardDate . cardCVC-CCV';
+    grid-template-areas:
+      "cardOwner cardOwner cardOwner"
+      "cardNum cardNum cardNum"
+      "cardDate . cardCVC-CCV";
     row-gap: 1.6rem;
   }
 }
@@ -391,6 +391,40 @@ body {
 
 .btn {
   grid-area: btn;
+  padding-top: 2.4rem;
+  margin-bottom: 4rem;
+  border-top: 2px solid var(--cart-button-divider);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__prev,
+  &__next {
+    width: 15rem;
+    border-radius: 0.8rem;
+    display: flex;
+    cursor: pointer;
+    &-icon {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+  &__prev {
+    color: var(--basic-color);
+    &-icon {
+      margin-right: 1.2rem;
+      background: var(--arrow-black) center/contain no-repeat;
+    }
+  }
+  &__next {
+    padding: 1rem 3rem;
+    background-color: $main-button-color;
+    color: white;
+    &-icon {
+      margin-left: 1.2rem;
+      background: var(--arrow-white) center/contain no-repeat;
+      transform: rotate(180deg);
+    }
+  }
 }
 
 .footer {

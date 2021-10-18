@@ -520,6 +520,39 @@ body {
 
 .btn {
   grid-area: btn;
+  padding-top: 2.4rem;
+  margin-bottom: 4rem;
+  border-top: 2px solid var(--cart-button-divider);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn__prev, .btn__next {
+  width: 15rem;
+  border-radius: 0.8rem;
+  display: flex;
+  cursor: pointer;
+}
+.btn__prev-icon, .btn__next-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.btn__prev {
+  color: var(--basic-color);
+}
+.btn__prev-icon {
+  margin-right: 1.2rem;
+  background: var(--arrow-black) center/contain no-repeat;
+}
+.btn__next {
+  padding: 1rem 3rem;
+  background-color: #f67499;
+  color: white;
+}
+.btn__next-icon {
+  margin-left: 1.2rem;
+  background: var(--arrow-white) center/contain no-repeat;
+  transform: rotate(180deg);
 }
 
 .footer {
