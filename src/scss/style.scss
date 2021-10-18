@@ -38,7 +38,7 @@ body {
 
 .header {
   position: relative;
-  @include flexArrange;
+  @include flexArrange(0, center);
   height: 4em;
   margin-inline: 1.5rem;
   font-size: 1.4rem;

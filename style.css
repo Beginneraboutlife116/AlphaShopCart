@@ -193,7 +193,7 @@ body {
   position: relative;
   display: flex;
   justify-content: 0;
-  align-items: 0;
+  align-items: center;
   height: 4em;
   margin-inline: 1.5rem;
   font-size: 1.4rem;
