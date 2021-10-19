@@ -9,7 +9,7 @@
 }
 
 // mixins
-@mixin flexArrange($jc-val: 0, $ai-val: 0) {
+@mixin flexArrange($jc-val: false, $ai-val: false) {
   display: flex;
   @if ($jc-val) {
     justify-content: $jc-val;
@@ -28,17 +28,13 @@ $gridAreaList: mrms, name, phone, email, liveCity, address, cardOwner, cardNum,
   }
 }
 
-.d-none {
-  display: none;
-}
-
 body {
   background-color: var(--body-bg);
 }
 
 .header {
   position: relative;
-  @include flexArrange(0, center);
+  @include flexArrange(false, center);
   height: 4em;
   margin-inline: 1.5rem;
   font-size: 1.4rem;
@@ -84,6 +80,15 @@ body {
       transform: scaleY(1);
     }
   }
+  @include md {
+    font-size: 1.6rem;
+  }
+  @include lg {
+    margin-inline: 12%;
+    &__toggleBox {
+      display: none;
+    }
+  }
 }
 
 .nav {
@@ -112,8 +117,7 @@ body {
     }
   }
   &__icons {
-    max-width: 15rem;
-    min-width: 13rem;
+    width: 15rem;
     @include flexArrange(space-between);
     margin: 2.4rem auto;
     height: 2.4rem;
@@ -134,6 +138,26 @@ body {
       background: var(--dark-mode-icon) center/contain no-repeat;
     }
   }
+  @include lg {
+    outline: 1px solid red;
+    all: unset;
+    width: 100%;
+    height: 100%;
+    @include flexArrange(space-between, center);
+    &__menu {
+      all: unset;
+      @include flexArrange(space-between);
+      &-list {
+        font-size: 1.4rem;
+        border-bottom: none;
+        margin-right: 1.5em;
+      }
+    }
+    &__icons {
+      width: 13rem;
+      margin-inline: 0;
+    }
+  }
 }
 
 .information {
@@ -142,6 +166,9 @@ body {
   @include md {
     font-size: 3.2rem;
     margin: 8rem 0 4.8rem 1.5rem;
+  }
+  @include lg {
+    margin-left: 12%;
   }
 }
 
@@ -157,6 +184,19 @@ body {
     "cart"
     "."
     "btn";
+  @include md {
+    grid-template-columns: 17fr 4fr 14fr;
+    grid-template-rows: auto 6.4rem auto 4.8rem auto;
+    grid-template-areas:
+      "stepper . cart"
+      ". . cart"
+      "form . cart"
+      ". . cart"
+      "btn . cart";
+  }
+  @include lg {
+    padding-inline: 12%;
+  }
 }
 
 .stepper {
@@ -165,6 +205,7 @@ body {
   font-size: 1.6rem;
   &__info {
     position: relative;
+    @include flexArrange(false, center);
     &-circle {
       @include flexArrange(center, center);
       width: 2em;
@@ -176,6 +217,11 @@ body {
     }
     &-title {
       display: none;
+      @include breakpoint(527px) {
+        display: block;
+        margin-left: 0.8rem;
+        color: var(--step-inactive-color);
+      }
     }
   }
   &__connect-line {
@@ -184,11 +230,17 @@ body {
     height: 0.1rem;
     background-color: var(--step-inactive-color);
   }
+  @include md {
+    font-size: 1.2rem;
+  }
 }
 .finish,
 .active {
-  + .stepper__connect-line {
+  & + .stepper__connect-line {
     background-color: var(--step-activeAndFinished-circleBorderColor);
+  }
+  & .stepper__info-title {
+    color: var(--step--activeAndFinished-circleBorderColor);
   }
 }
 .finish {
@@ -236,6 +288,14 @@ body {
       "liveCity liveCity liveCity"
       "address address address";
     row-gap: 1.6rem;
+    @include md {
+      grid-template-columns: 5fr 1fr 2fr 1fr 8fr;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-areas:
+        "mrms . name name name"
+        "phone phone phone . email"
+        "liveCity . address address address";
+    }
   }
   &__part-content--row {
     &--title {
@@ -326,6 +386,9 @@ body {
         }
       }
     }
+    @include md {
+      margin-bottom: 9.6rem;
+    }
   }
   .checked {
     border-color: var(--box-checked-border-color);
@@ -338,7 +401,18 @@ body {
       "cardNum cardNum cardNum"
       "cardDate . cardCVC-CCV";
     row-gap: 1.6rem;
+    @include md {
+      grid-template-columns: 8fr 1fr 3fr 5fr;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-areas:
+        "cardOwner cardOwner cardOwner ."
+        "cardNum cardNum cardNum ."
+        "cardDate . cardCVC-CCV cardCVC-CCV";
+    }
   }
+}
+.d-none {
+  display: none;
 }
 
 .cart {
@@ -373,6 +447,15 @@ body {
         &--plus {
           background: var(--plus-icon) center/contain no-repeat;
         }
+      }
+      @include lg {
+        flex: 1;
+        display: grid;
+        grid-template-columns: max-content max-content;
+        grid-template-rows: 1fr 2fr;
+        grid-auto-flow: column;
+        align-items: start;
+        margin-left: 2.1rem;
       }
     }
   }
@@ -432,4 +515,56 @@ body {
 
 .footer {
   display: none;
+  &__logo {
+    width: 10em;
+    height: 1.8em;
+    background: var(--logo) center/contain no-repeat;
+    align-self: center;
+  }
+  @include md {
+    display: block;
+    @include flexArrange(space-between);
+    padding: 6.4rem 1.5rem 8rem;
+    font-size: 1.4rem;
+    background-color: var(--footer-bg);
+    &__section {
+      &-lists {
+        padding: 0;
+        margin: 1.5em 0 0;
+      }
+      &-list--text {
+        margin-bottom: 0.5em;
+        text-decoration: none;
+        color: var(--footer-font-color);
+      }
+      &:last-child .footer__section-title {
+        margin-bottom: 1em;
+      }
+      &-socialMedia {
+        width: 10rem;
+        height: 2.4rem;
+        @include flexArrange(space-between);
+        &-FB,
+        &-IG,
+        &-WA {
+          width: 2.4rem;
+          height: 2.4rem;
+          cursor: pointer;
+        }
+        &-FB {
+          background: var(--facebook) center/contain no-repeat;
+        }
+        &-IG {
+          background: var(--instagram) center/contain no-repeat;
+        }
+        &-WA {
+          background: var(--whatsApp) center/contain no-repeat;
+        }
+      }
+    }
+  }
+  @include lg {
+    font-size: 1.6rem;
+    padding-inline: 12%;
+  }
 }

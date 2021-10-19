@@ -39,6 +39,7 @@ $gray-9: #F6F7F8;
   --cart-button-divider: #{$gray-8};
 
   --footer-bg: #{$gray-9};
+  --footer-font-color: #{$gray-6};
 
   --search-icon: url(/src/images/lightMode-icon/icon-search.png);
   --cart-icon: url(/src/images/lightMode-icon/icon-cart.png);
@@ -80,6 +81,7 @@ $gray-9: #F6F7F8;
   --cart-button-divider: hsla(0, 0%, 100%, 0.2);
 
   --footer-bg: #{$gray-7};
+  --footer-font-color: rgba(255, 255, 255, 0.6);
 
   --search-icon: url(/src/images/darkMode-icon/icon-search-dark.png);
   --cart-icon: url(/src/images/darkMode-icon/icon-cart-dark.png);
