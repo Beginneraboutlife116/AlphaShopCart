@@ -660,6 +660,11 @@ body {
   display: flex;
   cursor: pointer;
 }
+@media (min-width: 426px) {
+  .btn__prev, .btn__next {
+    width: 17rem;
+  }
+}
 .btn__prev-icon, .btn__next-icon {
   width: 2.4rem;
   height: 2.4rem;
@@ -675,9 +680,13 @@ body {
   padding: 1rem 3rem;
   background-color: #f67499;
   color: white;
+  display: flex;
+  justify-content: center;
+}
+.btn__next-text {
+  margin-right: 1.2rem;
 }
 .btn__next-icon {
-  margin-left: 1.2rem;
   background: var(--arrow-white) center/contain no-repeat;
   transform: rotate(180deg);
 }

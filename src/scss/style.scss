@@ -502,6 +502,9 @@ body {
     border-radius: 0.8rem;
     display: flex;
     cursor: pointer;
+    @include sm {
+      width: 17rem;
+    }
     &-icon {
       width: 2.4rem;
       height: 2.4rem;
@@ -518,8 +521,11 @@ body {
     padding: 1rem 3rem;
     background-color: $main-button-color;
     color: white;
+    @include flexArrange(center);
+    &-text {
+      margin-right: 1.2rem;
+    }
     &-icon {
-      margin-left: 1.2rem;
       background: var(--arrow-white) center/contain no-repeat;
       transform: rotate(180deg);
     }
