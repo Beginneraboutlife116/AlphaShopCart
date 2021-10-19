@@ -187,12 +187,20 @@ body {
   background-color: var(--body-bg);
 }
 
+.main {
+  padding: 0 1.5rem;
+}
+@media (min-width: 1025px) {
+  .main {
+    padding: 0 12%;
+  }
+}
+
 .header {
   position: relative;
   display: flex;
   align-items: center;
   height: 4em;
-  margin-inline: 1.5rem;
   font-size: 1.4rem;
 }
 .header__toggleBox {
@@ -241,9 +249,6 @@ body {
   }
 }
 @media (min-width: 1025px) {
-  .header {
-    margin-inline: 12%;
-  }
   .header__toggleBox {
     display: none;
   }
@@ -314,8 +319,15 @@ body {
   .nav__menu-list {
     font-size: 1.4rem;
     border-bottom: none;
-    margin-right: 1.5em;
+    margin-right: 1.2em;
   }
+}
+@media (min-width: 1025px) and (min-width: 1201px) {
+  .nav__menu-list {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1025px) {
   .nav__icons {
     width: 13rem;
     margin-inline: 0;
@@ -323,23 +335,17 @@ body {
 }
 
 .information {
-  margin: 1.6rem 0 2.4rem 1.5rem;
+  margin-block: 1.6rem 2.4rem;
   font-size: 2.4rem;
 }
 @media (min-width: 769px) {
   .information {
     font-size: 3.2rem;
-    margin: 8rem 0 4.8rem 1.5rem;
-  }
-}
-@media (min-width: 1025px) {
-  .information {
-    margin-left: 12%;
+    margin-block: 8rem 4.8rem;
   }
 }
 
 .main-content {
-  padding-inline: 1.5rem;
   display: grid;
   grid-template-rows: auto 2.4rem auto 3.2rem auto 3.2rem auto;
   grid-template-areas: "stepper" "." "form" "." "cart" "." "btn";
@@ -349,11 +355,6 @@ body {
     grid-template-columns: 17fr 4fr 14fr;
     grid-template-rows: auto 6.4rem auto 4.8rem auto;
     grid-template-areas: "stepper . cart" ". . cart" "form . cart" ". . cart" "btn . cart";
-  }
-}
-@media (min-width: 1025px) {
-  .main-content {
-    padding-inline: 12%;
   }
 }
 
