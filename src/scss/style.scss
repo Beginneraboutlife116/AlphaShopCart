@@ -423,6 +423,9 @@ body {
   padding: 1.6rem;
   border: 1px solid var(--cart-border);
   border-radius: 0.8rem;
+  &__title {
+    display: none;
+  }
   &__item {
     @include flexArrange(space-between);
     margin-bottom: 1.6rem;
@@ -449,7 +452,7 @@ body {
           background: var(--plus-icon) center/contain no-repeat;
         }
       }
-      @include lg {
+      @include xl {
         flex: 1;
         display: grid;
         grid-template-columns: max-content max-content;
@@ -468,6 +471,22 @@ body {
   }
   &__price {
     padding-bottom: 0;
+  }
+  @include md {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.4rem;
+    &__title {
+      display: block;
+      margin-top: 1.6rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--basic-color);
+    }
+    &__price {
+      padding-bottom: 1.6rem;
+    }
   }
 }
 
