@@ -6,6 +6,8 @@ const btnPrev = document.querySelector('.btns__prev')
 const forms = document.querySelectorAll('.form__part')
 const steps = document.querySelectorAll('.stepper__info')
 const cart = document.querySelector('.cart')
+const secondForm = document.querySelector('.form__second')
+const secondFormRadios = document.querySelectorAll('.form__second-delivery--radio')
 const items = [
   {
     id: 1,
@@ -22,6 +24,7 @@ const items = [
     numbers: 1
   }
 ]
+const price = document.querySelector('cart__price')
 let total = 0
 
 const cartInnerHTML = function () {
@@ -55,15 +58,17 @@ const cartInnerHTML = function () {
       </div>
       <div class="cart__price">
         <span class="cart__price--total">小計</span>
-        <span class="cart__price--price">$${new Intl.NumberFormat().format(total)}</span>
+        <span class="cart__price--price">$${total}</span>
       </div>
     `
   })
   cart.innerHTML = cartItemsContentHead + cartItemsContentMiddle + cartItemsContentEnd
 }()
 
+// 按鈕相關函式
 function goToNextStep(e) {
   const target = e.target.closest('.btn')
+  if (!target) { return }
   if (target.firstElementChild.textContent === "確認下單") {
     confirm(`總金額為 ${new Intl.NumberFormat().format(total)} 元`)
     return
@@ -76,8 +81,6 @@ function goToNextStep(e) {
   }
   toggleBtnDisabledStyle()
   toggleStepperAndForm(currentStep, pastStep)
-  console.log('pastStep: ', pastStep)
-  console.log('currentStep: ', currentStep)
 }
 
 function toggleBtnDisabledStyle() {
@@ -110,4 +113,22 @@ function toggleStepperAndForm(stepA, stepB) {
   }
 }
 
+// radio表單函式
+function confirmBorderColor() {
+  secondFormRadios.forEach((radio) => {
+    if (radio.checked) {
+      radio.parentElement.classList.add('checked')
+      if (radio.id === 'std') {
+        return deliveryFee = 0
+      }
+      if (radio.id === 'dhl') {
+        return deliveryFee = 500
+      }
+    } else {
+      radio.parentElement.classList.remove('checked')
+    }
+  })
+}
+
 btn.addEventListener('click', goToNextStep)
+secondForm.addEventListener('change', confirmBorderColor)
