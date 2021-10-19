@@ -490,7 +490,7 @@ body {
   }
 }
 
-.btn {
+.btns {
   grid-area: btn;
   padding-top: 2.4rem;
   margin-bottom: 4rem;
@@ -532,7 +532,7 @@ body {
   }
   .disabled {
     display: none;
-    + .btn__next {
+    + .btns__next {
       width: 100%;
       @include flexArrange(center);
     }

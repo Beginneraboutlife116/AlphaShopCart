@@ -645,7 +645,7 @@ body {
   }
 }
 
-.btn {
+.btns {
   grid-area: btn;
   padding-top: 2.4rem;
   margin-bottom: 4rem;
@@ -654,46 +654,46 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.btn__prev, .btn__next {
+.btns__prev, .btns__next {
   width: 15rem;
   border-radius: 0.8rem;
   display: flex;
   cursor: pointer;
 }
 @media (min-width: 426px) {
-  .btn__prev, .btn__next {
+  .btns__prev, .btns__next {
     width: 17rem;
   }
 }
-.btn__prev-icon, .btn__next-icon {
+.btns__prev-icon, .btns__next-icon {
   width: 2.4rem;
   height: 2.4rem;
 }
-.btn__prev {
+.btns__prev {
   color: var(--basic-color);
 }
-.btn__prev-icon {
+.btns__prev-icon {
   margin-right: 1.2rem;
   background: var(--arrow-black) center/contain no-repeat;
 }
-.btn__next {
+.btns__next {
   padding: 1rem 3rem;
   background-color: #f67499;
   color: white;
   display: flex;
   justify-content: center;
 }
-.btn__next-text {
+.btns__next-text {
   margin-right: 1.2rem;
 }
-.btn__next-icon {
+.btns__next-icon {
   background: var(--arrow-white) center/contain no-repeat;
   transform: rotate(180deg);
 }
-.btn .disabled {
+.btns .disabled {
   display: none;
 }
-.btn .disabled + .btn__next {
+.btns .disabled + .btns__next {
   width: 100%;
   display: flex;
   justify-content: center;
