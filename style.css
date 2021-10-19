@@ -599,6 +599,7 @@ body {
 .cart__item-content-amout--minus, .cart__item-content-amout--plus {
   height: 100%;
   aspect-ratio: 1;
+  cursor: pointer;
 }
 .cart__item-content-amout--minus {
   background: var(--minus-icon) center/contain no-repeat;
@@ -635,7 +636,7 @@ body {
   }
   .cart__title {
     display: block;
-    margin-top: 1.6rem;
+    margin-top: 0.8rem;
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--basic-color);
