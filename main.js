@@ -88,8 +88,6 @@ function controlStep(e) {
   } else if (target.classList.contains('btns__prev')) {
     currentStep--
   }
-  console.log('現在位置：', currentStep)
-  console.log('過去位置：', pastStep)
   toggleBtnDisabledStyle()
   toggleStepperAndForm(currentStep, pastStep)
 }
@@ -124,18 +122,21 @@ function toggleStepperAndForm(stepA, stepB) {
 
 // radio表單函式
 function confirmBorderColor() {
+  const cartDeliveryFee = document.querySelector('.cart__deliveryFee--price')
   secondFormRadios.forEach((radio) => {
     if (radio.checked) {
       radio.parentElement.classList.add('checked')
       if (radio.id === 'std') {
         deliveryFee = 0
         deliveryWay = "標準運送"
+        cartDeliveryFee.innerHTML = "免費"
         countPrice()
       }
       if (radio.id === 'dhl') {
         deliveryFee = 500
-        countPrice()
+        cartDeliveryFee.innerHTML = "500"
         deliveryWay = "DHL貨運"
+        countPrice()
       }
     } else {
       radio.parentElement.classList.remove('checked')
