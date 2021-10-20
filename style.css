@@ -596,15 +596,15 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.cart__item-content-amout--minus, .cart__item-content-amout--plus {
+.cart__item-content-amout--btn {
   height: 100%;
   aspect-ratio: 1;
   cursor: pointer;
 }
-.cart__item-content-amout--minus {
+.cart__item-content-amout .minus {
   background: var(--minus-icon) center/contain no-repeat;
 }
-.cart__item-content-amout--plus {
+.cart__item-content-amout .plus {
   background: var(--plus-icon) center/contain no-repeat;
 }
 @media (min-width: 1201px) {
@@ -726,6 +726,9 @@ body {
     margin-bottom: 0.5em;
     text-decoration: none;
     color: var(--footer-font-color);
+  }
+  .footer__section-list--text:hover {
+    color: #f67499;
   }
   .footer__section:last-child .footer__section-title {
     margin-bottom: 1em;

@@ -440,16 +440,15 @@ body {
         width: 11.6rem;
         height: 2.7rem;
         @include flexArrange(space-between);
-        &--minus,
-        &--plus {
+        &--btn {
           height: 100%;
           aspect-ratio: 1;
           cursor: pointer;
         }
-        &--minus {
+        & .minus {
           background: var(--minus-icon) center/contain no-repeat;
         }
-        &--plus {
+        & .plus {
           background: var(--plus-icon) center/contain no-repeat;
         }
       }
@@ -563,6 +562,9 @@ body {
         margin-bottom: 0.5em;
         text-decoration: none;
         color: var(--footer-font-color);
+        &:hover {
+          color: $main-button-color;
+        }
       }
       &:last-child .footer__section-title {
         margin-bottom: 1em;
