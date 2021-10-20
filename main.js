@@ -85,6 +85,8 @@ function controlStep(e) {
   } else if (target.classList.contains('btns__prev')) {
     currentStep--
   }
+  console.log('現在位置：', currentStep)
+  console.log('過去位置：', pastStep)
   toggleBtnDisabledStyle()
   toggleStepperAndForm(currentStep, pastStep)
 }
@@ -105,17 +107,16 @@ function toggleBtnDisabledStyle() {
 }
 
 function toggleStepperAndForm(stepA, stepB) {
-  forms[stepA].classList.toggle('d-none')
-  forms[stepB].classList.toggle('d-none')
   if (stepA > stepB) {
-    steps[stepA].classList.add('active')
-    steps[stepB].classList.remove('active')
     steps[stepB].classList.add('finish')
   } else {
     steps[stepB].classList.remove('finish')
-    steps[stepB].classList.add('active')
-    steps[stepA].classList.remove('active')
+    steps[stepA].classList.remove('finish')
   }
+  forms[stepA].classList.toggle('d-none')
+  forms[stepB].classList.toggle('d-none')
+  steps[stepB].classList.remove('active')
+  steps[stepA].classList.add('active')
 }
 
 // radio表單函式
