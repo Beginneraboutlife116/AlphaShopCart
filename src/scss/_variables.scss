@@ -1,6 +1,6 @@
 // colors
-$main-button-color: hsl(343, 88%, 71%);
-$basic-dark: hsl(0, 0%, 16%);
+$main-button-color: #f67499;
+$basic-dark: #2a2a2a;
 $white: white;
 $gray-1: #f0f0f5;
 $gray-2: #afb1bd;
@@ -17,20 +17,21 @@ $gray-9: #F6F7F8;
   --body-bg: white;
   --basic-color: #{$basic-dark};
 
+  --nav-menu-list-bottom-border: #2929291a;
+
   --step-activeAndFinished-circleBorderColor: #{$basic-dark};
-  --step-circle-bgc: transparent;
   --step-inactive-color: #{$gray-2};
   --step-connect-line-color: #{$gray-1};
 
   --input-border: #{$gray-3};
   --input-description: #{$gray-4};
   --input-placeholder: #999999;
-  --input-select: #{$basic-dark};
+  --input-select-icon: #{$basic-dark};
 
-  --box-unchecked-bg-color: #{$white};
-  --box-unchecked-border-color: #{$gray-1};
-  // --box-checked-bg-color: #{$basic-dark};
-  --box-checked-border-color: #{$basic-dark};
+  --second-form-radio-unchecked-bg-color: #{$white};
+  --second-form-unchecked-border-color: #{$gray-1};
+  --second-form-radio-checked-border-color: #{$basic-dark};
+  --second-form-time-description: #{$basic-dark};
 
   --cart-border: #{$gray-1};
   --cart-bg: white;
@@ -58,24 +59,24 @@ $gray-9: #F6F7F8;
   --body-bg: #121212;
   --basic-color: #{$white};
 
-  --step-activeAndFinished-circleBorderColor: transparent;
-  --step-circle-bgc: #{$gray-7};
-  --step-inactive-color: #f0f0f566;
-  --step-connect-line-color: #f0f0f566;
+  --nav-menu-list-bottom-border: hsla(0, 0%, 100%, 0.4);
+
+  --step-activeAndFinished-circleBorderColor: white;
+  --step-inactive-color: hsla(240, 20%, 95%, 0.4);
+  --step-connect-line-color: hsla(240, 20%, 95%, 0.4);
 
   --input-border: #{$gray-6};
   --input-description: #ffffff66;
   --input-placeholder: #ffffff4d;
-  --input-select: #{$gray-6};
+  --input-select-icon: #{$gray-6};
 
-  --box-unchecked-bg-color: #{$gray-7};
-  --box-unchecked-border-color: #{$gray-6};
-  // --box-checked-bg-color: #{$gray-7};
-  --box-checked-border-color: #{$white};
+  --second-form-radio-unchecked-bg-color: #{$gray-7};
+  --second-form-unchecked-border-color: #{$gray-6};
+  --second-form-radio-checked-border-color: #{$white};
+  --second-form-time-description: rgba(255, 255, 255, 0.4);
 
   --cart-border: #ffffff33;
   --cart-bg: #383838;
-  --cart-button-content: #{$gray-7};
   --cart-info-divider: #ffffff33;
 
   --cart-button-divider: #ffffff33;

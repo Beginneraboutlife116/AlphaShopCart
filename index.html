@@ -94,7 +94,9 @@
                     type="text"
                     class="form__part-content--row--text"
                     id="name"
+                    name="name"
                     placeholder="請輸入姓名"
+                    required
                   />
                 </div>
                 <div class="form__part-content--row phone">
@@ -105,7 +107,9 @@
                     type="text"
                     class="form__part-content--row--text"
                     id="phone"
+                    name="phone"
                     placeholder="請輸入行動電話"
+                    required
                   />
                 </div>
                 <div class="form__part-content--row email">
@@ -116,6 +120,7 @@
                     type="email"
                     class="form__part-content--row--email"
                     id="email"
+                    name="email"
                     placeholder="請輸入電子郵件"
                   />
                 </div>
@@ -160,6 +165,7 @@
                     type="text"
                     class="form__part-content--row--text"
                     id="address"
+                    name="address"
                     placeholder="請輸入地址"
                   />
                 </div>
@@ -227,6 +233,7 @@
                   <input
                     type="text"
                     id="cardOwner"
+                    name="cardOwner"
                     class="form__part-content--row--text"
                     placeholder="John Doe"
                   />
@@ -238,6 +245,7 @@
                   <input
                     type="text"
                     id="cardNum"
+                    name="cardNum"
                     class="form__part-content--row--text"
                     placeholder="1111 2222 3333 4444"
                   />
@@ -249,6 +257,7 @@
                   <input
                     type="date"
                     id="cardDate"
+                    name="cardDate"
                     class="form__part-content--row--date"
                   />
                 </div>
@@ -259,9 +268,12 @@
                     >CVC/CCV</label
                   >
                   <input
-                    type="number"
+                    type="text"
                     id="cardCVC-CCV"
                     class="form__part-content--row--number"
+                    maxlength="3"
+                    placeholder="123"
+                    name="cardCVC-CCV"
                   />
                 </div>
               </div>

@@ -8,6 +8,19 @@
   transform: translate(-50%, -50%);
 }
 
+%inputStyle {
+  display: block;
+  width: 100%;
+  height: 4rem;
+  padding-left: 1.6rem;
+  border-radius: 0.4rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--input-border);
+  background-color: transparent;
+  cursor: pointer;
+}
+
 // mixins
 @mixin flexArrange($jc-val: false, $ai-val: false) {
   display: flex;
@@ -110,7 +123,7 @@ body {
     padding: 0;
     &-list {
       padding-block: 2.4rem;
-      border-bottom: 2px solid hsla(0, 0%, 16%, 0.1);
+      border-bottom: 2px solid var(--nav-menu-list-bottom-border);
       text-align: center;
       &-info {
         text-decoration: none;
@@ -144,7 +157,6 @@ body {
     }
   }
   @include lg {
-    outline: 1px solid red;
     all: unset;
     width: 100%;
     height: 100%;
@@ -171,6 +183,7 @@ body {
 .information {
   margin-block: 1.6rem 2.4rem;
   font-size: 2.4rem;
+  color: var(--basic-color);
   @include md {
     font-size: 3.2rem;
     margin-block: 8rem 4.8rem;
@@ -212,7 +225,6 @@ body {
       width: 2em;
       height: 2em;
       border-radius: 50%;
-      background-color: var(--step-circle-bgc);
       border: 0.1rem solid var(--step-inactive-color);
       color: var(--step-inactive-color);
     }
@@ -240,13 +252,13 @@ body {
   & + .stepper__connect-line {
     background-color: var(--step-activeAndFinished-circleBorderColor);
   }
-  & .stepper__info-title {
-    color: var(--step--activeAndFinished-circleBorderColor);
+  .stepper__info-title {
+    color: var(--step-activeAndFinished-circleBorderColor);
   }
 }
 .finish {
   .stepper__info-circle {
-    border-color: var(--step-activeAndFinished-circleBorderColor);
+    border: none;
     background-color: $gray-7;
     &::after {
       content: "";
@@ -274,6 +286,7 @@ body {
   &__part-title {
     margin-bottom: 2.4rem;
     font-size: 2.4rem;
+    color: var(--basic-color);
   }
   &__first,
   &__third {
@@ -306,23 +319,16 @@ body {
     &--text,
     &--email,
     &--number,
-    &--select,
-    &--date {
-      display: block;
-      width: 100%;
-      height: 4rem;
-      padding-left: 1.6rem;
-      border-radius: 0.4rem;
-      border-width: 1px;
-      border-color: var(--input-border);
-      appearance: none;
+    &--date,
+    &--select {
+      @extend %inputStyle;
       &::placeholder {
         font-size: 1.2rem;
-        line-height: 1.6rem;
         color: var(--input-placeholder);
       }
       &:valid {
         font-size: 1.2rem;
+        color: var(--basic-color);
       }
       &:invalid {
         font-size: 1.2rem;
@@ -343,14 +349,12 @@ body {
         width: 0;
         border-style: solid;
         border-width: 0.5rem 0.45rem 0;
-        border-color: var(--input-select) transparent transparent;
+        border-color: var(--input-select-icon) transparent transparent;
         z-index: -1;
       }
     }
     &--select {
-      &:valid {
-        background-color: transparent;
-      }
+      appearance: none;
     }
   }
   &__second {
@@ -358,8 +362,9 @@ body {
       height: 6rem;
       @include flexArrange(start);
       padding: 1rem 2rem;
-      border: 1px solid var(--box-unchecked-border-color);
+      border: 1px solid var(--second-form-unchecked-border-color);
       border-radius: 0.4rem;
+      cursor: pointer;
       &:first-child {
         margin-bottom: 2.4rem;
       }
@@ -370,7 +375,7 @@ body {
         margin-right: 2rem;
         border: 1px solid #333;
         border-radius: 50%;
-        background-color: var(--box-unchecked-bg-color);
+        background-color: var(--second-form-radio-unchecked-bg-color);
         &:checked {
           background-color: white;
           border-width: 0.6rem;
@@ -378,11 +383,13 @@ body {
       }
       &-info {
         flex: 1;
+        color: var(--basic-color);
         &-detail {
           @include flexArrange(space-between);
           font-size: 1.4rem;
           &--time {
             font-size: 1.2rem;
+            color: var(--second-form-time-description);
           }
         }
       }
@@ -392,7 +399,7 @@ body {
     }
   }
   .checked {
-    border-color: var(--box-checked-border-color);
+    border-color: var(--second-form-radio-checked-border-color);
   }
   &__third {
     grid-template-columns: 1fr 3rem 1fr;
@@ -423,6 +430,8 @@ body {
   padding: 1.6rem;
   border: 1px solid var(--cart-border);
   border-radius: 0.8rem;
+  color: var(--basic-color);
+  background-color: var(--cart-bg);
   &__title {
     display: none;
   }
@@ -554,6 +563,9 @@ body {
     font-size: 1.4rem;
     background-color: var(--footer-bg);
     &__section {
+      &-title {
+        color: var(--basic-color);
+      }
       &-lists {
         padding: 0;
         margin: 1.5em 0 0;
