@@ -708,6 +708,15 @@ body {
   display: flex;
   justify-content: center;
 }
+@media (min-width: 426px) {
+  .btns .disabled {
+    display: block;
+    visibility: hidden;
+  }
+  .btns .disabled + .btns__next {
+    width: 17rem;
+  }
+}
 
 .footer {
   display: none;

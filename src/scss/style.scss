@@ -545,6 +545,13 @@ body {
       width: 100%;
       @include flexArrange(center);
     }
+    @include sm {
+      display: block;
+      visibility: hidden;
+      + .btns__next {
+        width: 17rem;
+      }
+    }
   }
 }
 
