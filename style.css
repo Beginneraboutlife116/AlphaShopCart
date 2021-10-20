@@ -106,26 +106,26 @@ select {
 }
 
 .darkMode {
-  --body-bg: hsl(0, 0%, 7%);
+  --body-bg: #121212;
   --basic-color: white;
   --step-activeAndFinished-circleBorderColor: transparent;
   --step-circle-bgc: #333;
-  --step-inactive-color: hsla(240, 20%, 95%, 0.4);
-  --step-connect-line-color: hsla(240, 20%, 95%, 0.4);
+  --step-inactive-color: #f0f0f566;
+  --step-connect-line-color: #f0f0f566;
   --input-border: #5e5e5e;
-  --input-description: hsla(0, 0%, 100%, 0.4);
-  --input-placeholder: rgba(255, 255, 255, 0.3);
+  --input-description: #ffffff66;
+  --input-placeholder: #ffffff4d;
   --input-select: #5e5e5e;
   --box-unchecked-bg-color: #333;
   --box-unchecked-border-color: #5e5e5e;
   --box-checked-border-color: white;
-  --cart-border: hsla(0, 0%, 100%, 0.2);
-  --cart-bg: hsl(0, 0%, 22%);
+  --cart-border: #ffffff33;
+  --cart-bg: #383838;
   --cart-button-content: #333;
-  --cart-info-divider: hsla(0, 0%, 100%, 0.2);
-  --cart-button-divider: hsla(0, 0%, 100%, 0.2);
+  --cart-info-divider: #ffffff33;
+  --cart-button-divider: #ffffff33;
   --footer-bg: #333;
-  --footer-font-color: rgba(255, 255, 255, 0.6);
+  --footer-font-color: #ffffff99;
   --search-icon: url(/src/images/darkMode-icon/icon-search-dark.png);
   --cart-icon: url(/src/images/darkMode-icon/icon-cart-dark.png);
   --dark-mode-icon: url(/src/images/darkMode-icon/icon-sun.png);

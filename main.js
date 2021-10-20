@@ -1,6 +1,12 @@
 const cart = document.querySelector('.cart')
 const secondForm = document.querySelector('.form__second')
 const secondFormRadios = document.querySelectorAll('.form__second-delivery--radio')
+const btn = document.querySelector('.btns')
+const btnNext = document.querySelector('.btns__next')
+const btnPrev = document.querySelector('.btns__prev')
+const forms = document.querySelectorAll('.form__part')
+const steps = document.querySelectorAll('.stepper__info')
+const darkModeSwitchBtn = document.querySelector('#dark-mode')
 const items = [
   {
     id: 1,
@@ -57,16 +63,13 @@ const cartInnerHTML = function () {
   cart.innerHTML = cartItemsContentHead + cartItemsContentMiddle + cartItemsContentEnd
 }()
 
+const price = document.querySelector('.cart__price')
+const itemsPlusAndMinusControl = document.querySelectorAll('.cart__item-content-amout')
+const itemShowNumbers = document.querySelectorAll('.cart__item-content-amout--number')
 let deliveryFee = 0
 let currentStep = 0
 let deliveryWay = '標準運送'
-const btn = document.querySelector('.btns')
-const btnNext = document.querySelector('.btns__next')
-const btnPrev = document.querySelector('.btns__prev')
-const forms = document.querySelectorAll('.form__part')
-const steps = document.querySelectorAll('.stepper__info')
-const price = document.querySelector('.cart__price')
-const itemsPlusAndMinusControl = document.querySelectorAll('.cart__item-content-amout')
+let darkMode = localStorage.getItem('darkMode') || ''
 
 // 按鈕相關函式
 function controlStep(e) {
@@ -144,7 +147,6 @@ function confirmBorderColor() {
 function plusOrMinusNumbersOfItem(e) {
   const target = e.target.closest('.cart__item-content-amout--btn')
   const itemId = e.target.closest('.cart__item-content-amout--btn').dataset.id
-  const itemShowNumbers = document.querySelectorAll('.cart__item-content-amout--number')
   if (target.classList.contains('minus')) {
     if (items[itemId - 1].numbers === 0) { return }
     items[itemId - 1].numbers--
@@ -167,8 +169,26 @@ function countPrice() {
   price.lastElementChild.innerHTML = `$${new Intl.NumberFormat().format(total)}`
 }
 
+// 轉換黑暗模式
+function toggleDarkMode() {
+  darkMode = localStorage.getItem('darkMode')
+  if (darkMode !== 'on') {
+    document.body.classList.add('darkMode')
+    localStorage.setItem('darkMode', 'on')
+  } else {
+    document.body.classList.remove('darkMode')
+    localStorage.setItem('darkMode', 'off')
+  }
+}
+
+// 近來頁面的default狀態
+if (darkMode === 'on') {
+  document.body.classList.add('darkMode')
+}
+
 btn.addEventListener('click', controlStep)
 secondForm.addEventListener('change', confirmBorderColor)
 itemsPlusAndMinusControl.forEach((controller) => {
   controller.addEventListener('click', plusOrMinusNumbersOfItem)
 })
+darkModeSwitchBtn.addEventListener('click', toggleDarkMode)
