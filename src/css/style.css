@@ -93,17 +93,17 @@ select {
   --cart-button-divider: #e6e6eb;
   --footer-bg: #F6F7F8;
   --footer-font-color: #5e5e5e;
-  --search-icon: url(src/images/lightMode-icon/icon-search.png);
-  --cart-icon: url(src/images/lightMode-icon/icon-cart.png);
-  --dark-mode-icon: url(src/images/lightMode-icon/icon-moon.png);
-  --plus-icon: url(src/images/lightMode-icon/icon-plus.png);
-  --minus-icon: url(src/images/lightMode-icon/icon-minus.png);
-  --arrow-white: url(src/images/darkMode-icon/arrow-dark.png);
-  --arrow-black: url(src/images/lightMode-icon/arrow.png);
-  --logo: url(src/images/lightMode-icon/logo.png);
-  --facebook: url(src/images/lightMode-icon/icon-fb.png);
-  --instagram: url(src/images/lightMode-icon/icon-ig.png);
-  --whatsApp: url(src/images/lightMode-icon/icon-whatsapp.png);
+  --search-icon: url(/src/images/lightMode-icon/icon-search.png);
+  --cart-icon: url(/src/images/lightMode-icon/icon-cart.png);
+  --dark-mode-icon: url(/src/images/lightMode-icon/icon-moon.png);
+  --plus-icon: url(/src/images/lightMode-icon/icon-plus.png);
+  --minus-icon: url(/src/images/lightMode-icon/icon-minus.png);
+  --arrow-white: url(/src/images/darkMode-icon/arrow-dark.png);
+  --arrow-black: url(/src/images/lightMode-icon/arrow.png);
+  --logo: url(/src/images/lightMode-icon/logo.png);
+  --facebook: url(/src/images/lightMode-icon/icon-fb.png);
+  --instagram: url(/src/images/lightMode-icon/icon-ig.png);
+  --whatsApp: url(/src/images/lightMode-icon/icon-whatsapp.png);
 }
 
 .darkMode {
