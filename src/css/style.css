@@ -93,17 +93,17 @@ select {
   --cart-button-divider: #e6e6eb;
   --footer-bg: #F6F7F8;
   --footer-font-color: #5e5e5e;
-  --search-icon: url("../images/lightMode-icon/icon-search.png");
-  --cart-icon: url("../images/lightMode-icon/icon-cart.png");
-  --dark-mode-icon: url("../images/lightMode-icon/icon-moon.png");
-  --plus-icon: url("../images/lightMode-icon/icon-plus.png");
-  --minus-icon: url("../images/lightMode-icon/icon-minus.png");
-  --arrow-white: url("../images/darkMode-icon/arrow-dark.png");
-  --arrow-black: url("../images/lightMode-icon/arrow.png");
-  --logo: url("../images/lightMode-icon/logo.png");
-  --facebook: url("../images/lightMode-icon/icon-fb.png");
-  --instagram: url("../images/lightMode-icon/icon-ig.png");
-  --whatsApp: url("../images/lightMode-icon/icon-whatsapp.png");
+  --search-icon: url("../images/lightmode-icon/icon-search.png");
+  --cart-icon: url("../images/lightmode-icon/icon-cart.png");
+  --dark-mode-icon: url("../images/lightmode-icon/icon-moon.png");
+  --plus-icon: url("../images/lightmode-icon/icon-plus.png");
+  --minus-icon: url("../images/lightmode-icon/icon-minus.png");
+  --arrow-white: url("../images/darkmode-icon/arrow-dark.png");
+  --arrow-black: url("../images/lightmode-icon/arrow.png");
+  --logo: url("../images/lightmode-icon/logo.png");
+  --facebook: url("../images/lightmode-icon/icon-fb.png");
+  --instagram: url("../images/lightmode-icon/icon-ig.png");
+  --whatsApp: url("../images/lightmode-icon/icon-whatsapp.png");
 }
 
 .darkMode {
@@ -127,16 +127,16 @@ select {
   --cart-button-divider: #ffffff33;
   --footer-bg: #333;
   --footer-font-color: #ffffff99;
-  --search-icon: url("../images/darkMode-icon/icon-search-dark.png");
-  --cart-icon: url("../images/darkMode-icon/icon-cart-dark.png");
-  --dark-mode-icon: url("../images/darkMode-icon/icon-sun.png");
-  --plus-icon: url("../images/darkMode-icon/icon-plus-dark.png");
-  --minus-icon: url("../images/darkMode-icon/icon-minus-dark.png");
-  --arrow-black: url("../images/darkMode-icon/arrow-dark.png");
-  --logo: url("../images/darkMode-icon/logo-dark.png");
-  --facebook: url("../images/darkMode-icon/icon-fb-dark.png");
-  --instagram: url("../images/darkMode-icon/icon-ig-dark.png");
-  --whatsApp: url("../images/darkMode-icon/icon-whatsapp-dark.png");
+  --search-icon: url("../images/darkmode-icon/icon-search-dark.png");
+  --cart-icon: url("../images/darkmode-icon/icon-cart-dark.png");
+  --dark-mode-icon: url("../images/darkmode-icon/icon-sun.png");
+  --plus-icon: url("../images/darkmode-icon/icon-plus-dark.png");
+  --minus-icon: url("../images/darkmode-icon/icon-minus-dark.png");
+  --arrow-black: url("../images/darkmode-icon/arrow-dark.png");
+  --logo: url("../images/darkmode-icon/logo-dark.png");
+  --facebook: url("../images/darkmode-icon/icon-fb-dark.png");
+  --instagram: url("../images/darkmode-icon/icon-ig-dark.png");
+  --whatsApp: url("../images/darkmode-icon/icon-whatsapp-dark.png");
 }
 
 .form__part-content--row--selectWrapper::after, .header__logo {
