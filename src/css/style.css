@@ -708,7 +708,7 @@ body {
   display: flex;
   justify-content: center;
 }
-@media (min-width: 426px) {
+@media (min-width: 769px) {
   .btns .disabled {
     display: block;
     visibility: hidden;

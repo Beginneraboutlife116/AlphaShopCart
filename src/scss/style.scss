@@ -545,7 +545,7 @@ body {
       width: 100%;
       @include flexArrange(center);
     }
-    @include sm {
+    @include md {
       display: block;
       visibility: hidden;
       + .btns__next {
