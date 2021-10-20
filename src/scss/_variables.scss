@@ -42,17 +42,17 @@ $gray-9: #F6F7F8;
   --footer-bg: #{$gray-9};
   --footer-font-color: #{$gray-6};
 
-  --search-icon: url(src/images/lightMode-icon/icon-search.png);
-  --cart-icon: url(src/images/lightMode-icon/icon-cart.png);
-  --dark-mode-icon: url(src/images/lightMode-icon/icon-moon.png);
-  --plus-icon: url(src/images/lightMode-icon/icon-plus.png);
-  --minus-icon: url(src/images/lightMode-icon/icon-minus.png);
-  --arrow-white: url(src/images/darkMode-icon/arrow-dark.png);
-  --arrow-black: url(src/images/lightMode-icon/arrow.png);
-  --logo: url(src/images/lightMode-icon/logo.png);
-  --facebook: url(src/images/lightMode-icon/icon-fb.png);
-  --instagram: url(src/images/lightMode-icon/icon-ig.png);
-  --whatsApp: url(src/images/lightMode-icon/icon-whatsapp.png);
+  --search-icon: url(../images/lightMode-icon/icon-search.png);
+  --cart-icon: url(../images/lightMode-icon/icon-cart.png);
+  --dark-mode-icon: url(../images/lightMode-icon/icon-moon.png);
+  --plus-icon: url(../images/lightMode-icon/icon-plus.png);
+  --minus-icon: url(../images/lightMode-icon/icon-minus.png);
+  --arrow-white: url(../images/darkMode-icon/arrow-dark.png);
+  --arrow-black: url(../images/lightMode-icon/arrow.png);
+  --logo: url(../images/lightMode-icon/logo.png);
+  --facebook: url(../images/lightMode-icon/icon-fb.png);
+  --instagram: url(../images/lightMode-icon/icon-ig.png);
+  --whatsApp: url(../images/lightMode-icon/icon-whatsapp.png);
 }
 
 .darkMode {
@@ -84,14 +84,14 @@ $gray-9: #F6F7F8;
   --footer-bg: #{$gray-7};
   --footer-font-color: #ffffff99;
 
-  --search-icon: url(src/images/darkMode-icon/icon-search-dark.png);
-  --cart-icon: url(src/images/darkMode-icon/icon-cart-dark.png);
-  --dark-mode-icon: url(src/images/darkMode-icon/icon-sun.png);
-  --plus-icon: url(src/images/darkMode-icon/icon-plus-dark.png);
-  --minus-icon: url(src/images/darkMode-icon/icon-minus-dark.png);
-  --arrow-black: url(src/images/darkMode-icon/arrow-dark.png);
-  --logo: url(src/images/darkMode-icon/logo-dark.png);
-  --facebook: url(src/images/darkMode-icon/icon-fb-dark.png);
-  --instagram: url(src/images/darkMode-icon/icon-ig-dark.png);
-  --whatsApp: url(src/images/darkMode-icon/icon-whatsapp-dark.png);
+  --search-icon: url(../images/darkMode-icon/icon-search-dark.png);
+  --cart-icon: url(../images/darkMode-icon/icon-cart-dark.png);
+  --dark-mode-icon: url(../images/darkMode-icon/icon-sun.png);
+  --plus-icon: url(../images/darkMode-icon/icon-plus-dark.png);
+  --minus-icon: url(../images/darkMode-icon/icon-minus-dark.png);
+  --arrow-black: url(../images/darkMode-icon/arrow-dark.png);
+  --logo: url(../images/darkMode-icon/logo-dark.png);
+  --facebook: url(../images/darkMode-icon/icon-fb-dark.png);
+  --instagram: url(../images/darkMode-icon/icon-ig-dark.png);
+  --whatsApp: url(../images/darkMode-icon/icon-whatsapp-dark.png);
 }
