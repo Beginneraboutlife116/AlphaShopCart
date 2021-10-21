@@ -41,6 +41,12 @@ $gridAreaList: mrms, name, phone, email, liveCity, address, cardOwner, cardNum,
   }
 }
 
+::-webkit-scrollbar {
+  /* make scrollbar transparent */
+  width: 0px;
+  background: transparent;
+}
+
 body {
   background-color: var(--body-bg);
 }
@@ -163,11 +169,11 @@ body {
     @include flexArrange(space-between, center);
     &__menu {
       all: unset;
+      width: 33%;
       @include flexArrange(space-between);
       &-list {
         font-size: 1.4rem;
         border-bottom: none;
-        margin-right: 1.2em;
         @include xl {
           font-size: 1.6rem;
         }

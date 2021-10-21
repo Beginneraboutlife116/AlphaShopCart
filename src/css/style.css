@@ -197,6 +197,12 @@ select {
   grid-area: cardCVC-CCV;
 }
 
+::-webkit-scrollbar {
+  /* make scrollbar transparent */
+  width: 0px;
+  background: transparent;
+}
+
 body {
   background-color: var(--body-bg);
 }
@@ -326,13 +332,13 @@ body {
   }
   .nav__menu {
     all: unset;
+    width: 33%;
     display: flex;
     justify-content: space-between;
   }
   .nav__menu-list {
     font-size: 1.4rem;
     border-bottom: none;
-    margin-right: 1.2em;
   }
 }
 @media (min-width: 1025px) and (min-width: 1201px) {
