@@ -591,7 +591,6 @@ body {
     align-self: center;
   }
   @include md {
-    display: block;
     @include flexArrange(space-between);
     padding: 6.4rem 1.5rem 8rem;
     font-size: 1.4rem;

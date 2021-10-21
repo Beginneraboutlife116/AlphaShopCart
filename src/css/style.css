@@ -751,7 +751,6 @@ body {
 }
 @media (min-width: 769px) {
   .footer {
-    display: block;
     display: flex;
     justify-content: space-between;
     padding: 6.4rem 1.5rem 8rem;
