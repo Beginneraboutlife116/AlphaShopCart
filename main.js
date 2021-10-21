@@ -166,6 +166,7 @@ function confirmBorderColor() {
 
 // version 2 for input btn
 function plusOrMinusNumbersOfItem(e) {
+  if (e.target.tagName !== "INPUT") return
   const inputValue = e.target.value
   const itemInput = document.querySelectorAll('input[name="quantity"]')
   const itemId = e.target.closest('.cart__item').dataset.id
