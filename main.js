@@ -176,7 +176,6 @@ function plusOrMinusNumbersOfItem(e) {
     if (items[itemId - 1].numbers === 0) { return }
     items[itemId - 1].numbers--
   } else {
-    // console.log(inputValue)
     items[itemId - 1].numbers = parseInt(inputValue, 10) || 0
   }
   itemInput[itemId - 1].value = items[itemId - 1].numbers.toString()
