@@ -460,11 +460,32 @@ body {
           aspect-ratio: 1;
           cursor: pointer;
         }
-        & .minus {
-          background: var(--minus-icon) center/contain no-repeat;
-        }
+        & .minus,
         & .plus {
-          background: var(--plus-icon) center/contain no-repeat;
+          // background: var(--minus-icon) center/contain no-repeat;
+          padding: 0;
+          border-radius: 50%;
+          border: none;
+          font-weight: bold;
+          font-size: 2.4rem;
+          line-height: 100%;
+          background-color: var(--cart-btn-bg);
+        }
+        // & .plus {
+        //   background: var(--plus-icon) center/contain no-repeat;
+        // }
+        // input 內容
+        &--number {
+          border:  none;
+          text-align: center;
+          width: 3ch;
+          background-color: transparent;
+          color: var(--basic-color);
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            appearance: none;
+            margin: 0;
+          }
         }
       }
       @include xl {

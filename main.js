@@ -32,7 +32,7 @@ const cartInnerHTML = function () {
   let cartItemsContentMiddle = ''
   items.forEach((item) => {
     cartItemsContentMiddle += `
-      <div class="cart__item">
+      <div class="cart__item" data-id=${item.id}>
         <img
           src="${item.image}"
           alt="${item.name}"
@@ -41,9 +41,9 @@ const cartInnerHTML = function () {
         <div class="cart__item-content">
           <p class="cart__item-content-name">${item.name}</p>
           <div class="cart__item-content-amout">
-            <div class="cart__item-content-amout--btn minus" data-id="${item.id}"></div>
-            <span class="cart__item-content-amout--number">${item.numbers}</span>
-            <div class="cart__item-content-amout--btn plus" data-id="${item.id}"></div>
+            <input type="button" value="-" class="cart__item-content-amout--btn minus">
+            <input type="number" step="1" max="99" value="1" name="quantity" class="cart__item-content-amout--number">
+            <input type="button" value="+" class="cart__item-content-amout--btn plus">
           </div>
           <p class="cart__item-content-price">$${new Intl.NumberFormat().format(item.price)}</p>
         </div>
@@ -62,6 +62,10 @@ const cartInnerHTML = function () {
   })
   cart.innerHTML = cartItemsContentHead + cartItemsContentMiddle + cartItemsContentEnd
 }()
+
+// {/* <div class="cart__item-content-amout--btn minus" data-id="${item.id}"></div>
+// <span class="cart__item-content-amout--number">${item.numbers}</span>
+// <div class="cart__item-content-amout--btn plus" data-id="${item.id}"></div> */}
 
 const price = document.querySelector('.cart__price')
 const itemsPlusAndMinusControl = document.querySelectorAll('.cart__item-content-amout')
@@ -145,18 +149,36 @@ function confirmBorderColor() {
 }
 
 // 購物車加減按鈕控制
+// function plusOrMinusNumbersOfItem(e) {
+//   const target = e.target.closest('.cart__item-content-amout--btn')
+//   const itemId = e.target.closest('.cart__item-content-amout--btn').dataset.id
+//   if (target.classList.contains('minus')) {
+//     if (items[itemId - 1].numbers === 0) { return }
+//     items[itemId - 1].numbers--
+//     itemShowNumbers[itemId - 1].innerHTML = items[itemId - 1].numbers
+//   }
+//   if (target.classList.contains('plus')) {
+//     items[itemId - 1].numbers++
+//     itemShowNumbers[itemId - 1].innerHTML = items[itemId - 1].numbers
+//   }
+//   countPrice()
+// }
+
+// version 2 for input btn
 function plusOrMinusNumbersOfItem(e) {
-  const target = e.target.closest('.cart__item-content-amout--btn')
-  const itemId = e.target.closest('.cart__item-content-amout--btn').dataset.id
-  if (target.classList.contains('minus')) {
+  const inputValue = e.target.value
+  const itemInput = document.querySelectorAll('input[name="quantity"]')
+  const itemId = e.target.closest('.cart__item').dataset.id
+  if (inputValue === '+') {
+    items[itemId - 1].numbers++
+  } else if (inputValue === '-') {
     if (items[itemId - 1].numbers === 0) { return }
     items[itemId - 1].numbers--
-    itemShowNumbers[itemId - 1].innerHTML = items[itemId - 1].numbers
+  } else {
+    // console.log(inputValue)
+    items[itemId - 1].numbers = parseInt(inputValue, 10) || 0
   }
-  if (target.classList.contains('plus')) {
-    items[itemId - 1].numbers++
-    itemShowNumbers[itemId - 1].innerHTML = items[itemId - 1].numbers
-  }
+  itemInput[itemId - 1].value = items[itemId - 1].numbers.toString()
   countPrice()
 }
 
@@ -191,5 +213,6 @@ btn.addEventListener('click', controlStep)
 secondForm.addEventListener('change', confirmBorderColor)
 itemsPlusAndMinusControl.forEach((controller) => {
   controller.addEventListener('click', plusOrMinusNumbersOfItem)
+  controller.addEventListener('change', plusOrMinusNumbersOfItem)
 })
 darkModeSwitchBtn.addEventListener('click', toggleDarkMode)
