@@ -167,21 +167,37 @@ function confirmBorderColor() {
 // version 2 for input btn
 function plusOrMinusNumbersOfItem(e) {
   if (e.target.tagName !== "INPUT") return
-  const inputValue = e.target.value
+  let inputValue = e.target.value
   const itemInput = document.querySelectorAll('input[name="quantity"]')
   const itemId = e.target.closest('.cart__item').dataset.id
   if (inputValue === '+') {
-    items[itemId - 1].numbers++
+    // items[itemId - 1].numbers++
+    incrementNumbersOfItem(itemId)
   } else if (inputValue === '-') {
-    if (items[itemId - 1].numbers === 0) { return }
-    items[itemId - 1].numbers--
+    // if (items[itemId - 1].numbers === 0) { return }
+    // items[itemId - 1].numbers--
+    decrementNumbersOfItem(inputValue, itemId)
   } else {
-    items[itemId - 1].numbers = parseInt(inputValue, 10) || 0
+    // items[itemId - 1].numbers = parseInt(inputValue, 10) || 0
+    inputNumbersOfItem(inputValue, itemId)
   }
   itemInput[itemId - 1].value = items[itemId - 1].numbers.toString()
   countPrice()
 }
 
+// 將函式在拆分
+function incrementNumbersOfItem(id) {
+  items[id - 1].numbers++
+}
+
+function decrementNumbersOfItem(value ,id) {
+  if (items[id - 1].numbers === 0) {return}
+  items[id - 1].numbers--
+}
+
+function inputNumbersOfItem(value, id) {
+  items[id - 1].numbers = value < 0 ? 0 : parseInt(value, 10)
+}
 // 算金額
 function countPrice() {
   total = 0
