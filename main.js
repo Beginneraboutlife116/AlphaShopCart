@@ -190,7 +190,7 @@ function incrementNumbersOfItem(id) {
   items[id - 1].numbers++
 }
 
-function decrementNumbersOfItem(value ,id) {
+function decrementNumbersOfItem(id) {
   if (items[id - 1].numbers === 0) {return}
   items[id - 1].numbers--
 }
