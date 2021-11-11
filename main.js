@@ -176,7 +176,7 @@ function plusOrMinusNumbersOfItem(e) {
   } else if (inputValue === '-') {
     // if (items[itemId - 1].numbers === 0) { return }
     // items[itemId - 1].numbers--
-    decrementNumbersOfItem(inputValue, itemId)
+    decrementNumbersOfItem(itemId)
   } else {
     // items[itemId - 1].numbers = parseInt(inputValue, 10) || 0
     inputNumbersOfItem(inputValue, itemId)
